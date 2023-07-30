@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <p class='githubJobsTitle'><span class='githubJobsSpan'>Github</span> Jobs</p>
     <LandingPage />
   </div>
 </template>
@@ -16,7 +17,4 @@ export default {
 </script>
 
 <style>
-#app {
-  /* font-family:; */
-}
 </style>

@@ -1,10 +1,114 @@
 body{
-  font-family: 'Times New Roman', Times, serif;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding:0px 4em;
 }
+:root{
+  --defaultBlue: #0275d8; 
+}
+
+button{
+  cursor:pointer;
+}
+.locationCityRecommendations{
+  margin-left:16px;
+  margin-top:15px;
+  font-size:16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.advancedSearch{
+  width:40%;
+  margin-top:40px;
+  color:navy;
+}
+.locationSearchLabel{
+  text-transform:uppercase;
+  color:gray;
+  font-weight: bolder;
+  margin-top:30px;
+}
+.locationInputWrapper{
+  display:flex;
+justify-content: center;
+background:white;
+padding:10px 20px;
+border-radius: 5px;
+}
+.locationInput{
+  border:none;
+  outline:none;
+  margin-left:5px;
+  width:100%;
+}
+.locationInput input::placeholder{
+  color:gray;
+}
+
 .githubJobsTitle{
   font-size:2rem;
 }
 .githubJobsSpan{
 font-weight: bolder;
 /* color:red */
+}
+.mainSearchInput{
+  padding:15px;
+  width:100%;
+  border:none;
+  outline:none;
+}
+.inputWrapper{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background:white;
+  border-radius: 3px;
+  padding:4px 10px;
+  padding-right:4px;
+  padding-left:16px;
+  font-size:16px;
+  width:70%;
+}
+.inputWrapper input::placeholder{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size:15px;
+}
+.mainSearchButton{
+  padding:15px 30px;
+  border-radius: 3px;
+  border:none;
+  background:var(--defaultBlue);
+  color:white;
+  font-size:15px;
+
+}
+.searchArea{
+  background:#292b2c;
+  padding:45px 40px;
+  border-radius: 10px;
+  display:flex;
+  justify-content: center;
+}
+.devInfo{
+  color:gray;
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    background-color: lightblue;
+    padding:0px 0.5em;
+  }
+  .advancedSearch{
+    width:100%;
+  }
+  .inputWrapper{
+    width:100%;
+  }
+  .searchArea{
+    padding:60px 20px;
+  }
 }
