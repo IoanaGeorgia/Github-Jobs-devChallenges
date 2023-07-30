@@ -1,0 +1,10 @@
+body{
+  font-family: 'Times New Roman', Times, serif;
+}
+.githubJobsTitle{
+  font-size:2rem;
+}
+.githubJobsSpan{
+font-weight: bolder;
+/* color:red */
+}
