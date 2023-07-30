@@ -54,6 +54,7 @@
 
 <div class='result'>
 
+<span class='infoWrapper'>
 <div class='resultTags'>
 <div v-for="i in jobs.tags" class='resultTag'>{{i}}
 </div>
@@ -64,7 +65,7 @@
 <div class='resultTitle'>{{jobs.title}}</div>
 <div class='remote' v-if='jobs.remote'>Remote</div>
 </div>
-
+</span>
 <div class='resultLocation'>  
 <span><span
             class="material-icons-outlined"
