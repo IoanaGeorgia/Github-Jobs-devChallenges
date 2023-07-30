@@ -31,14 +31,19 @@
             placeholder="City, state, zip code or country"
           />
         </span>
-      
       </div>
-      <div class='locationCityRecommendations'>
-      <input type='radio'> London</div>
-            <div class='locationCityRecommendations'>
-      <input type='radio'> Berlin</div>      <div class='locationCityRecommendations'>
-      <input type='radio'> Amsterdam</div>      <div class='locationCityRecommendations'>
-      <input type='radio'> Paris</div>
+      <div class="locationCityRecommendations">
+        <input type="radio" /> London
+      </div>
+      <div class="locationCityRecommendations">
+        <input type="radio" /> Berlin
+      </div>
+      <div class="locationCityRecommendations">
+        <input type="radio" /> Amsterdam
+      </div>
+      <div class="locationCityRecommendations">
+        <input type="radio" /> Paris
+      </div>
     </div>
   </div>
 
@@ -48,6 +53,34 @@
 <script>
 export default {
   name: 'LandingPage',
+  data() {
+    return {
+      jobs: [],
+    };
+  },
+  mounted() {
+    this.getJobs();
+  },
+  methods: {
+    getJobs() {
+   const url = 'https://ejobsitesoftware-com.p.rapidapi.comhttps//www.ejobsitesoftware.com/jobsite_demo/app/jobseeker_login/';
+const options = {
+	method: 'POST',
+	headers: {
+		'X-RapidAPI-Key': '4555eeb342msh82a07e4ba50ae46p118c22jsn6f388b181a4f',
+		'X-RapidAPI-Host': 'ejobsitesoftware-com.p.rapidapi.com'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
+
+  },
 };
 </script>
 
