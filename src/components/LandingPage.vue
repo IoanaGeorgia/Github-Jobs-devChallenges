@@ -45,7 +45,66 @@
         <input type="radio" /> Paris
       </div>
     </div>
-  </div>
+</div>
+
+
+
+<div class='results'>
+<!-- {{jobs}} -->
+
+<div class='result'>
+
+<div class='resultTags'>
+<div v-for="i in jobs.tags" class='resultTag'>{{i}}
+</div>
+</div>
+
+<div class='resultInfo'>
+<div class='resultCompany'>{{jobs.company_name}}</div>
+<div class='resultTitle'>{{jobs.title}}</div>
+<div class='remote' v-if='jobs.remote'>Remote</div>
+</div>
+
+<div class='resultLocation'>  
+<span><span
+            class="material-icons-outlined"
+            style="color: gray; font-size: 21px; margin-right:10px"
+          >
+            public
+          
+          </span>{{jobs.location}}</span>
+          <span><span
+            class="material-icons-outlined"
+            style="color: gray; font-size: 21px;  margin-right:10px"
+          >
+            watch_later
+          
+          </span>{{jobs.created_at}}</span>
+          
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- <div>{{jobs.company_name}}</div> -->
+<!-- <div>{{jobs.title}}</div> -->
+<div>{{jobs.remote}}</div>
+<div>{{jobs.location}}</div>
+<!-- <div>{{jobs.tags}}</div> -->
+
+<!-- </div>
+
+  </div> -->
+
 
   <p class="devInfo">Project created by Ioana P. in Vue for devChallenges.io</p>
 </template>
@@ -63,12 +122,13 @@ export default {
   },
   methods: {
    async getJobs() {
-const url = 'https://serpapi.com/search.json?engine=google_jobs&q=London'
+const url = 'https://www.arbeitnow.com/api/job-board-api'
 
 try {
 	const response = await fetch(url);
-	const result = await response.text();
-	console.log(result);
+	const result = await response.json();
+	console.log(result.data);
+  this.jobs = result.data[0]
 } catch (error) {
 	console.error(error);
 }

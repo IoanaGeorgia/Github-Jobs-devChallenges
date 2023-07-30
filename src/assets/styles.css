@@ -9,6 +9,48 @@ body{
 button{
   cursor:pointer;
 }
+.resultInfo{
+  padding:10px 0px;
+}
+.resultLocation{
+  color:gray;
+  display:flex;
+  align-items:flex-end;
+  justify-content: flex-start;
+}
+.resultLocation > span{
+  display:flex;
+  padding-right:10px;
+}
+.result{
+  background:white;
+  display:flex;
+  flex-direction: column;
+  padding:10px;
+  border-radius: 5px;
+  color:navy;
+
+}
+.resultTitle{
+  font-size:20px;
+  padding:19px 0px;
+}
+.resultTags{
+  height:100%;
+  padding:10px;
+}
+.resultTag{
+  background: lightblue;
+  border:2px solid  var(--defaultBlue);
+  padding:2px;
+  font-size:10px;
+  width:fit-content;
+  border-radius: 2px;
+
+}
+.resultCompany{
+  font-weight: bold;
+}
 .locationCityRecommendations{
   margin-left:16px;
   margin-top:15px;
