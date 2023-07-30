@@ -25,11 +25,14 @@ button{
 .result{
   background:white;
   display:flex;
-  flex-direction: column;
   padding:10px;
   border-radius: 5px;
   color:navy;
 
+}
+.results{
+  /* background:red; */
+  padding:40px 0px 40px 0px;
 }
 .resultTitle{
   font-size:20px;
@@ -152,5 +155,8 @@ font-weight: bolder;
   }
   .searchArea{
     padding:60px 20px;
+  }
+  .result{
+    flex-direction: column;
   }
 }

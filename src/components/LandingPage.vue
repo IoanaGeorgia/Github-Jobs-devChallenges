@@ -68,18 +68,23 @@
 <div class='resultLocation'>  
 <span><span
             class="material-icons-outlined"
-            style="color: gray; font-size: 21px; margin-right:10px"
+            style="color: gray; font-size: 21px; margin-right:5px"
           >
             public
           
           </span>{{jobs.location}}</span>
-          <span><span
+          <span>
+          <span
             class="material-icons-outlined"
-            style="color: gray; font-size: 21px;  margin-right:10px"
+            style="color: gray; font-size: 21px;  margin-right:5px"
           >
             watch_later
           
-          </span>{{jobs.created_at}}</span>
+          </span>
+          
+          <span v-if='daysAgo(jobs.created_at)'>{{daysAgo(jobs.created_at)}}</span>
+          <span v-else>Today</span>
+          </span>
           
 </div>
 
@@ -121,6 +126,13 @@ export default {
     this.getJobs();
   },
   methods: {
+    daysAgo(timestamp){
+  const currentTimestamp = Date.now() / 1000;
+  const differenceInSeconds = currentTimestamp - timestamp;
+  const secondsInADay = 60 * 60 * 24;
+  const daysAgo = Math.floor(differenceInSeconds / secondsInADay);
+  return daysAgo;
+    },
    async getJobs() {
 const url = 'https://www.arbeitnow.com/api/job-board-api'
 
