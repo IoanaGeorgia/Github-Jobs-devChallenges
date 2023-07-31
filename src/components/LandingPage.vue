@@ -52,20 +52,20 @@
 <div class='results'>
 <!-- {{jobs}} -->
 
-<div class='result'>
+<div v-for='job in jobs' class='result'>
 
 <span class='infoWrapper'>
 <div class='resultTags'>
-<div v-for="i in jobs.tags" class='resultTag'>{{i}}
+<div v-for="i in job.tags" class='resultTag'>{{i}}
 </div>
 </div>
 
+<div class='resultWrapper'>
 <div class='resultInfo'>
-<div class='resultCompany'>{{jobs.company_name}}</div>
-<div class='resultTitle'>{{jobs.title}}</div>
-<div class='remote' v-if='jobs.remote'>Remote</div>
+<div class='resultCompany'>{{job.company_name}}</div>
+<div class='resultTitle'>{{job.title}}</div>
+<div class='remote' v-if='job.remote'>Remote</div>
 </div>
-</span>
 <div class='resultLocation'>  
 <span><span
             class="material-icons-outlined"
@@ -73,7 +73,7 @@
           >
             public
           
-          </span>{{jobs.location}}</span>
+          </span>{{job.location}}</span>
           <span>
           <span
             class="material-icons-outlined"
@@ -83,33 +83,23 @@
           
           </span>
           
-          <span v-if='daysAgo(jobs.created_at)'>{{daysAgo(jobs.created_at)}}</span>
+          <span v-if='daysAgo(job.created_at)'>{{daysAgo(job.created_at)}} day(s) ago</span>
           <span v-else>Today</span>
           </span>
           
 </div>
-
+</div>
 </div>
 
 </div>
 
 </div>
 
-</div>
+<!-- </div> -->
 
-</div>
+<!-- </div> -->
 
-</div>
-
-<!-- <div>{{jobs.company_name}}</div> -->
-<!-- <div>{{jobs.title}}</div> -->
-<div>{{jobs.remote}}</div>
-<div>{{jobs.location}}</div>
-<!-- <div>{{jobs.tags}}</div> -->
-
-<!-- </div>
-
-  </div> -->
+<!-- </div> -->
 
 
   <p class="devInfo">Project created by Ioana P. in Vue for devChallenges.io</p>
@@ -141,7 +131,8 @@ try {
 	const response = await fetch(url);
 	const result = await response.json();
 	console.log(result.data);
-  this.jobs = result.data[0]
+  result.data.length = 6
+  this.jobs = result.data
 } catch (error) {
 	console.error(error);
 }
