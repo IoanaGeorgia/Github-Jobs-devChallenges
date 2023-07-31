@@ -1,6 +1,7 @@
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  padding: 0px 4em;
+  padding: 0px 6em;
+  background: #dee1e7;
 }
 :root {
   --defaultBlue: #0275d8;
@@ -11,18 +12,28 @@ button {
 }
 .resultInfo {
   padding: 10px 0px;
+  width:100%;
 }
 .resultWrapper {
-  /* background:yellow; */
+  display:flex;
+  width:100%;
+  justify-content: space-between;
+
+}
+.searchResultsArea{
+  display:flex;
+  align-items: flex-start;
 }
 .resultLocation {
   color: gray;
   display: flex;
   align-items: flex-end;
+  justify-content: flex-end;
+  width:60%;
 }
 .resultLocation > span {
   display: flex;
-  padding-right: 7vw;
+  padding-right: 2vw;
 }
 .result {
   background: white;
@@ -34,10 +45,11 @@ button {
 }
 .infoWrapper {
   display: flex;
+  width:100%;
 }
 .results {
-  /* background:red; */
   padding: 40px 0px 40px 0px;
+  margin-left:30px;
 }
 .resultTitle {
   font-size: 20px;
@@ -46,6 +58,8 @@ button {
 .resultTags {
   height: 100%;
   padding: 10px;
+  max-width:130px;
+  min-width: 130px;
 }
 .resultTag {
   background: lightblue;
@@ -68,7 +82,7 @@ button {
   user-select: none;
 }
 .advancedSearch {
-  width: 40%;
+  min-width:30%;
   margin-top: 40px;
   color: navy;
 }
@@ -145,15 +159,11 @@ button {
   color: gray;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
   body {
-    background-color: lightblue;
-    padding: 0px 0.5em;
+    padding: 0px 1.4em;
   }
-  .advancedSearch {
-    width: 100%;
-  }
-  .inputWrapper {
+  .advancedSearch, .inputWrapper {
     width: 100%;
   }
   .searchArea {
@@ -161,5 +171,21 @@ button {
   }
   .result {
     flex-direction: column;
+  }
+  .resultLocation > span {
+    padding-right: 7vw;
+  }
+  .results{
+    margin:0px;
+  }
+  .resultWrapper{
+    flex-direction: column;
+  }
+  .resultLocation{
+    justify-content: flex-start;
+    width:100%;
+  }
+  .searchResultsArea{
+    display:block;
   }
 }

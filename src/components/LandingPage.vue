@@ -44,7 +44,7 @@
       <div class="locationCityRecommendations">
         <input type="radio" /> Paris
       </div>
-    </div>
+    
 </div>
 
 
@@ -65,9 +65,11 @@
 <div class='resultCompany'>{{job.company_name}}</div>
 <div class='resultTitle'>{{job.title}}</div>
 <div class='remote' v-if='job.remote'>Remote</div>
+<div v-else class='remote'>Not remote </div>
 </div>
 <div class='resultLocation'>  
-<span><span
+<span>
+<span
             class="material-icons-outlined"
             style="color: gray; font-size: 21px; margin-right:5px"
           >
@@ -93,6 +95,7 @@
 
 </div>
 
+</div>
 </div>
 
 <!-- </div> -->
@@ -131,7 +134,7 @@ try {
 	const response = await fetch(url);
 	const result = await response.json();
 	console.log(result.data);
-  result.data.length = 6
+  result.data.length = 6 //to be cchanged on pagination
   this.jobs = result.data
 } catch (error) {
 	console.error(error);

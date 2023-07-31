@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <p class='githubJobsTitle'><span class='githubJobsSpan'>Github</span> Jobs</p>
+    PROJECT TEMPORARILY ABANDONED DUE TO NO SUITABLE FREE JOBS API AVAILABLE :(
     <LandingPage />
   </div>
 </template>
